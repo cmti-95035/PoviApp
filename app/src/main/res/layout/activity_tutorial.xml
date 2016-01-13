@@ -1,0 +1,48 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/white"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true">
+
+    </android.support.v4.view.ViewPager>
+
+    <com.viewpagerindicator.CirclePageIndicator
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/indicator"
+        android:padding="20dip"
+        app:radius="5dp"
+        app:fillColor="@color/semi_transparent"
+        app:pageColor="@android:color/transparent"
+        app:strokeColor="@color/semi_transparent"
+        app:strokeWidth="1dp"
+        app:snap="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="SKIP"
+        android:id="@+id/tutorialButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:height="36dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/semi_transparent"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_margin="8dp" />
+</RelativeLayout>

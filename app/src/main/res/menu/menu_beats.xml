@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/tipjar_invite"
+        android:icon="@drawable/ic_people_white_24dp"
+        app:showAsAction="ifRoom"
+        android:title="Invite friends">
+    </item>
+    <item
+        android:id="@+id/refresh_tips"
+        android:icon="@drawable/ic_refresh_white_24dp"
+        app:showAsAction="always"
+        android:title="Get new tips">
+    </item>
+</menu>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/povi_splash"
+    android:padding="16dp"
+    android:baselineAligned="false"
+    android:id="@+id/view">
+
+
+    <ImageView
+        android:id="@+id/splashImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:background="@android:color/transparent"
+        android:layout_gravity="center"
+        android:src="@drawable/splash_animation"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="FAMILY CONNECT"
+        android:id="@+id/splashText"
+        android:layout_gravity="center"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="@color/white"
+        android:visibility="invisible"
+        android:layout_below="@+id/splashImageView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="sign in"
+            android:id="@+id/loginButton"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_marginRight="8dp"
+            android:visibility="visible"
+            android:theme="@style/PoviWhiteButton"
+            android:minWidth="88dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="sign up"
+            android:id="@+id/registerButton"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:visibility="visible"
+            android:theme="@style/PoviGreenButton"
+            android:minWidth="88dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

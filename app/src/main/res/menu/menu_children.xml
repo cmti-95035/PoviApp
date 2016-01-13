@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/add_profile"
+        android:icon="@drawable/ic_person_add_white_24dp"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="1"
+        android:title="Add new child profile">
+    </item>
+    <item
+        android:id="@+id/delete_profile"
+        android:icon="@drawable/ic_delete_white_24dp"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="3"
+        android:title="Delete child profile">
+    </item>
+    <item
+        android:id="@+id/refresh_children"
+        android:icon="@drawable/ic_refresh_white_24dp"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="4"
+        android:title="Refresh children list">
+    </item>
+
+</menu>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <style name="PoviTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+                <!-- Customize your theme here. -->
+                <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+				<item name="android:statusBarColor">@android:color/transparent</item>
+				<item name="android:windowTranslucentStatus">true</item>
+
+            <!-- Customize your theme here. -->
+            <item name="android:textColorPrimary">@drawable/text_state</item>
+            <item name="android:textColorSecondary">@color/povi_secondary_text</item>
+            <item name="android:textColorTertiary">@color/povi_tertiary_text</item>
+
+            <item name="android:colorBackground">@color/white</item>
+            <item name="android:windowBackground">@color/white</item>
+
+            <!-- colorPrimary is used for the default action bar background -->
+            <item name="colorPrimary">@color/povi_primary</item>
+
+            <!-- colorPrimaryDark is used for the status bar -->
+            <item name="colorPrimaryDark">@color/povi_primary_dark</item>
+
+            <!-- colorAccent is used as the default value for colorControlActivated
+                 which is used to tint widgets -->
+            <item name="colorAccent">@color/povi_accent</item>
+
+            <item name="android:divider">@color/povi_divider</item>
+
+            <!-- <item name="android:buttonStyle">@style/PoviButtonText</item>-->
+
+            <item name="alertDialogTheme">@style/PoviDialog</item>
+
+            <item name="android:dropDownListViewStyle">@style/PopupMenuListView</item>
+            <item name="dropDownListViewStyle">@style/PopupMenuListView</item>
+
+            <!--<item name="android:listDivider"></item>-->
+            <item name="windowActionModeOverlay">true</item>
+            <item name="android:actionModeBackground">@color/povi_primary</item>
+            <item name="android:actionModeCloseDrawable">@drawable/ic_done_white_24dp</item>
+        </style>
+
+    <style name="PoviGreenButton" parent="Widget.AppCompat.Button">
+        <item name="android:colorButtonNormal">@color/teal</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="PoviWhiteButton" parent="Widget.AppCompat.Button">
+        <item name="android:colorButtonNormal">@color/white</item>
+        <item name="android:textColor">@color/teal</item>
+    </style>
+
+    <style name="PoviDarkBlueButton" parent="Widget.AppCompat.Button">
+        <item name="android:colorButtonNormal">@color/facebook_blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="PoviDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="android:colorAccent">@color/povi_accent</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@color/povi_primary_text</item>
+    </style>
+
+    <style name="PoviToolbar" parent="Base.Widget.AppCompat.Toolbar">
+        <item name="colorPrimary">@color/povi_primary</item>
+        <item name="colorPrimaryDark">@color/povi_primary_dark</item>
+        <item name="android:textColorPrimary">@color/white</item>
+
+    </style>
+
+    <style name="JournalTextEntryToolbar" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:textColorSecondary">@color/abc_secondary_text_material_light</item>
+        <item name="android:background">@color/povi_primary_dark</item>
+    </style>
+
+    <!-- OverFlow menu Styles -->
+    <style name="PopupMenuListView" parent="@style/Widget.AppCompat.Light.ListView.DropDown">
+        <item name="android:divider">@color/povi_primary</item>
+        <item name="android:dividerHeight">2dp</item>
+        <item name="android:background">@color/povi_primary</item>
+    </style>
+
+    <style name="PoviTabText" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="PoviTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/PoviTabText</item>
+        <item name="tabSelectedTextColor">@color/red</item>
+    </style>
+</resources>

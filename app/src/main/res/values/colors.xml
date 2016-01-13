@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="povi_primary_dark">@color/amber_dark</color>
+    <color name="povi_primary">@color/amber</color>
+    <color name="povi_primary_light">@color/amber_light</color>
+    <color name="povi_text">@color/white</color>
+    <color name="povi_accent">@color/red_accent</color>
+    <color name="povi_primary_text">@color/black</color>
+    <color name="povi_secondary_text">@color/grey_dark</color>
+    <color name="povi_tertiary_text">@color/grey_light</color>
+    <color name="povi_divider">@color/grey_light</color>
+
+    <!-- Define material colors -->
+    <color name="red">#F44336</color>
+    <color name="red_accent">#FF5252</color>
+    <color name="amber">#FFC107</color>
+    <color name="amber_dark">#FFA000</color>
+    <color name="amber_light">#FFECB3</color>
+    <color name="teal">#009688</color>
+    <color name="teal_dark">#00796B</color>
+    <color name="teal_light">#B2DFDB</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#212121</color>
+    <color name="grey_dark">#727272</color>
+    <color name="grey_light">#B6B6B6</color>
+    <color name="semi_transparent">#80FFFFFF</color>
+    <color name="grey_600">#757575</color>
+    <color name="grey_50">#FAFAFA</color>
+    <color name="facebook_blue">#3b5998</color>
+    <color name="cyan">#00BCD4</color>
+</resources>

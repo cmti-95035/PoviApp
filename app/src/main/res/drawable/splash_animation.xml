@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<animation-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/splashAnimation"
+    android:oneshot="true">
+
+    <item android:drawable="@drawable/povi_logo_smile" android:duration="1000" />
+    <item android:drawable="@drawable/povi_logo_cloud" android:duration="1000" />
+    <item android:drawable="@drawable/povi_logo_ball" android:duration="1000" />
+    <item android:drawable="@drawable/povi_logo_orange" android:duration="1000" />
+
+</animation-list>

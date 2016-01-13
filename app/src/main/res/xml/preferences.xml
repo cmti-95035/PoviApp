@@ -1,0 +1,33 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Notifications">
+
+        <SwitchPreference
+            android:key="notification_status"
+            android:defaultValue="true"
+            android:title="Enable notifications"
+            android:summary="Enable or disable notifications" />
+
+        <com.antwish.povi.familyconnect.NotificationTimePreference
+            android:key = "notification_time"
+            android:defaultValue="18:00"
+            android:dependency="notification_status"
+            android:positiveButtonText="Set"
+            android:negativeButtonText="Cancel"
+            android:layout="?android:attr/preferenceLayoutChild"
+            android:summary="Set tip of the day notification time"
+            android:title="Tip of the day notification time" />
+
+        <com.antwish.povi.familyconnect.JournalTimePreference
+            android:key = "journal_time"
+            android:defaultValue="22:00"
+            android:dependency="notification_status"
+            android:positiveButtonText="Set"
+            android:negativeButtonText="Cancel"
+            android:layout="?android:attr/preferenceLayoutChild"
+            android:summary="Set journal update reminder time"
+            android:title="Journal update reminder time" />
+    </PreferenceCategory>
+</PreferenceScreen>

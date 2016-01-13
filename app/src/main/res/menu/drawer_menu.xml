@@ -1,0 +1,45 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/tip"
+            android:icon="@drawable/ic_today_grey_24dp"
+            android:checked="true"
+            android:title="My beats" />
+
+        <item
+            android:id="@+id/treasurechest"
+            android:icon="@drawable/ic_chrome_reader_mode_grey_24dp"
+            android:title="My treasure chest" />
+
+        <item
+            android:id="@+id/userProfile"
+            android:icon="@drawable/ic_account_circle_grey_24dp"
+            android:title="My profile" />
+        <item
+            android:id="@+id/children"
+            android:icon="@drawable/ic_face_grey_24dp"
+            android:title="My children" />
+
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_settings_grey_24dp"
+            android:title="Settings" />
+        <item
+            android:id="@+id/help"
+            android:icon="@drawable/ic_help_grey_24dp"
+            android:title="Help and feedback" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_power_settings_new_grey_24dp"
+            android:title="Log out" />
+
+        <item
+            android:id="@+id/povistory"
+            android:icon="@drawable/ic_face_grey_24dp"
+            android:title="Play Povi Story" />
+        <item
+            android:id="@+id/uploadpovistory"
+            android:icon="@drawable/ic_face_grey_24dp"
+            android:title="Upload New Povi Story" />
+    </group>
+</menu>

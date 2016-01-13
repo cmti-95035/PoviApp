@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="0dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardElevation="4dp">
+    <!-- card_view:cardBackgroundColor="@color/amber" -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/preview"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/comment"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:textColor="@color/white"
+            android:maxLines="3"
+            android:ellipsize="end" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:id="@+id/linearLayout"
+            android:background="@color/white"
+            android:layout_below="@+id/description">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:id="@+id/likesButton"
+                android:src="@drawable/ic_favorite_red_24dp"
+                android:layout_below="@+id/tipText"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="0"
+                android:id="@+id/likesNr"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/likesButton"
+                android:layout_toEndOf="@+id/likesButton"
+                android:layout_alignBottom="@+id/likesButton"
+                android:layout_alignTop="@+id/likesButton"
+                android:layout_marginRight="16dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:id="@+id/commentsButton"
+                android:src="@drawable/ic_comment_amber_24dp"
+                android:layout_alignTop="@+id/likesNr"
+                android:layout_toRightOf="@+id/likesNr"
+                android:layout_toEndOf="@+id/likesNr"
+                android:layout_marginRight="8dp"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="0"
+                android:id="@+id/commentsNr"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_alignTop="@+id/sharesButton"
+                android:layout_toRightOf="@+id/sharesButton"
+                android:layout_toEndOf="@+id/sharesButton"
+                android:layout_alignBottom="@+id/replyButton"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:singleLine="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="X"
+                android:id="@+id/firstLetter"
+                android:textColor="@color/white"
+                android:background="@drawable/initial_item"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="14dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_gravity="left|center"
+                android:layout_marginRight="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/author"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:layout_marginRight="16dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/publishDate"
+                android:gravity="center" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

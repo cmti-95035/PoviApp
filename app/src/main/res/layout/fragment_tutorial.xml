@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_tutorial"
+    android:gravity="center_vertical|center|center_horizontal"
+    android:background="@color/teal"
+    android:paddingBottom="48dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tutorialImageView"
+        android:layout_gravity="center"
+        android:src="@drawable/onboard_2"
+        android:paddingLeft="48dp"
+        android:paddingRight="48dp"
+        android:paddingTop="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="RECEIVE TIPS"
+        android:id="@+id/boardingTitle"
+        android:textColor="@color/white"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Receive a daily thought\nprovoking question sent\noptimized to your schedule"
+        android:id="@+id/boardingCaption"
+        android:inputType="textMultiLine"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:paddingTop="16dp" />
+
+</LinearLayout>

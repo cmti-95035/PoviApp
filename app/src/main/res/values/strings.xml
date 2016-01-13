@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Povi Family Connect</string>
+
+    <string name="action_settings">Settings</string>
+
+    // Facebook strings
+    <string name="facebook_app_id">666985220100012</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_registration">Create an account</string>
+    <string name="title_activity_splash">Povi Connect</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="title_activity_addchild">Register new child</string>
+    <string name="title_activity_tiptemplates">What other kids said...</string>
+
+    <string name="title_logout">Logout</string>
+    <string name="title_profile">My profile</string>
+    <string name="title_journal">My journal</string>
+    <string name="title_tipjar">My tips</string>
+    <string name="title_beats">My beats</string>
+    <string name="title_beatcontent">My beats</string>
+    <string name="title_beatcollection">Collect beat</string>
+
+    <string name="title_activity_peripheral">Peripheral</string>
+    <string name="title_activity_playpovistory">Play Povi Story</string>
+    <string name="title_activity_uploadpovistory">Upload Povi Story</string>
+    <string name="title_activity_hrdemo">HRDemoActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="title_activity_tutorial">Tutorial</string>
+    <string name="drawer_open">drawer open</string>
+    <string name="drawer_close">drawer close</string>
+    <string name="title_activity_settings">Preferences</string>
+
+    <string name="journal_comment_prompt">Select Child</string>
+
+    <!-- Other Strings -->
+    <string name="tutorial_title_1">MEET POVI</string>
+    <string name="tutorial_title_2">RECEIVE TIPS</string>
+    <string name="tutorial_title_3">START TALKING</string>
+    <string name="tutorial_caption_1">POVI helps you log into\nyour child\'s universe</string>
+    <string name="tutorial_caption_2">Receive a daily thought\nprovoking question sent\ncustomized to your schedule</string>
+    <string name="tutorial_caption_3">Start stimulating conversations\nwith your children and record\ntheir responses</string>
+    <string name="term_of_use">By signing up, you agree to Povi Family Connect\'s <a href='http://www.povi.me/terms-and-conditions.html'> <b>Terms and Conditions of Use</b></a> and <a href='http://www.povi.me/privacy-policy.html'> <b>Privacy Policy</b></a></string>
+    <string name="journal_nocomment">Oops! No Journal Entries \nto display. Record an entry \nin Tip of the Day.</string>
+    <string name="password_forgotten"><u>Forgot your password?</u></string>
+    <string name="invitation_email"><![CDATA[Hi,<br/>I am getting bored of asking my kid, \"How\'s your day?\" or \"How\'s school?\" everyday, and getting a \"Fine\" or \"OK\" from their replies.<br/><br/><a href="https://play.google.com/store/apps/details?id=com.antwish.povi.familyconnect">Povi Family Connect </a>app sends me inspirations daily thoughts like \"Did you help anyone today?\" \"Why is it nice to give people compliments?\"<br/><br/>I get really funny answers from my kids that I have recorded in their daily Povi Journal too.<br/>Perhaps you want to give <a href="https://play.google.com/store/apps/details?id=com.antwish.povi.familyconnect">Povi Family Connect</a> app a try too?<br/><br/>Thank you.]]></string>
+</resources>
