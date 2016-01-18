@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
 
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.app.Activity;
@@ -15,6 +17,7 @@ import android.bluetooth.BluetoothGattService;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -68,6 +71,11 @@ public class PeripheralActivity extends AppCompatActivity implements BleWrapperU
 	public static boolean bleConnected = false;
 
 	private Toolbar mToolbar;
+
+	private ProgressDialog mDialog;
+	private static final Integer FAILURE = -1;
+	private static final Integer SUCCESS = 0;
+	private static final String TAG = PeripheralActivity.class.getSimpleName();
     
     public void uiDeviceConnected(final BluetoothGatt gatt,
 			                      final BluetoothDevice device)
@@ -257,8 +265,39 @@ public class PeripheralActivity extends AppCompatActivity implements BleWrapperU
 	@Override
 	public void uiDeviceFound(BluetoothDevice device, int rssi, byte[] record) {
 		// no need to handle that in this Activity (here, we are not scanning)
-	}  	
-	
+	}
+
+	private class ConnectPoviTask extends AsyncTask<String, String, Integer> {
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+
+		}
+
+		@Override
+		protected void onPostExecute(Integer result){
+			if(mDialog.isShowing())
+				mDialog.dismiss();
+			if(result == FAILURE){
+				Toast.makeText(getApplicationContext(), "Failed to connect to a POVI buddy device", Toast.LENGTH_LONG).show();
+				final Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
+				startActivity(intent);
+			}
+		}
+
+		@Override
+		protected Integer doInBackground(String... params){
+			try {
+				Thread.sleep(5000);
+				BluetoothGattService service = mServicesListAdapter.getService(0);
+				mBleWrapper.getCharacteristicsForService(service);
+				return SUCCESS;
+			} catch (Exception ex) {
+				Log.e(TAG, ex.getLocalizedMessage());
+			}
+			return FAILURE;
+		}
+	}
     private AdapterView.OnItemClickListener listClickListener = new AdapterView.OnItemClickListener() {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -334,6 +373,17 @@ public class PeripheralActivity extends AppCompatActivity implements BleWrapperU
 
         mListView.addHeaderView(mListViewHeader);
         mListView.setOnItemClickListener(listClickListener);
+
+		// create a ProgressDialog
+		mDialog = new ProgressDialog(this);
+		// set indeterminate style
+		mDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		// set title and message
+		mDialog.setTitle("Please wait");
+		mDialog.setMessage("Connecting POVI buddy...");
+		mDialog.show();
+
+		new ConnectPoviTask().execute();
 	}
 	
 	@Override

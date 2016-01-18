@@ -171,8 +171,11 @@ public class UploadStoryActivity extends AppCompatActivity implements BleWrapper
                 byteCount++;
                 // force it to connect
                 mBleWrapper.connect(mDeviceAddress);
-                if (PeripheralActivity.characteristicList != null && PeripheralActivity.characteristicList.size() > 5)
+                if (PeripheralActivity.characteristicList != null && PeripheralActivity.characteristicList.size() > 5) {
                     mBleWrapper.writeDataToCharacteristic(PeripheralActivity.characteristicList.get(4), bytes);
+                    //TODO: figure out how to write it properly via BLE, many times the previous write only re-connect the BLE
+                    mBleWrapper.writeDataToCharacteristic(PeripheralActivity.characteristicList.get(4), bytes);
+                }
                 else
                     return "BLE connection error!";
 
@@ -183,38 +186,28 @@ public class UploadStoryActivity extends AppCompatActivity implements BleWrapper
 
                 byte[] fileData = new byte[4];
                 // step 3. write the bytes from file
-//                for (int i = 0; i < 256; i++) {
-//                    byteCount++;
-//                    fileData[0] = (byte) i;
-//                    fileData[1] = (byte) i;
-//                    fileData[2] = (byte) i;
-//                    fileData[3] = (byte) i;
-//                    mBleWrapper.writeDataToCharacteristic(PeripheralActivity.characteristicList.get(5), fileData);
-//                    Thread.sleep(0, 200000);
-//                }
-
                 InputStream inputStream = getResources().openRawResource(R.raw.treasurehunt);
 
                 int count = 0;
                 do{
                     count = inputStream.read(fileData);
-                    if(count < 4)
-                    {
+                    byteCount+=count;
+                    if (count < 4) {
                         // end of file reached
-                        if(count > 0){
+                        if (count > 0) {
                             byte[] finalBytes = new byte[count];
-                            for(int i = 0; i < count; i++)
+                            for (int i = 0; i < count; i++)
                                 finalBytes[i] = fileData[i];
-                                                mBleWrapper.writeDataToCharacteristic(PeripheralActivity.characteristicList.get(5), finalBytes);
-
+                            mBleWrapper.writeDataToCharacteristic(PeripheralActivity.characteristicList.get(5), finalBytes);
                         }
-                    }else
+                    } else
                         mBleWrapper.writeDataToCharacteristic(PeripheralActivity.characteristicList.get(5), fileData);
-                    Thread.sleep(0, 200000);
+                    Thread.sleep(5);
                 }while(count == 4);
                 // stop 4. write to the board to stop uploading and save file
                 bytes[0] = STOP;
                 byteCount++;
+                Log.e(TAG, "total bytes written: " + byteCount);
                 mBleWrapper.writeDataToCharacteristic(PeripheralActivity.characteristicList.get(4), bytes);
                 return "Successfully uploaded";
             } catch (Exception ex) {
@@ -307,8 +300,8 @@ public class UploadStoryActivity extends AppCompatActivity implements BleWrapper
     // it may cache in the app as well to avoid pulling this content too frequently
     private List<String> populateStories(){
         List<String> stories = new ArrayList<>();
-        stories.add("1");
-        stories.add("2");
+        stories.add("Four Square");
+        stories.add("AGM");
 
         return stories;
     }
@@ -329,9 +322,9 @@ public class UploadStoryActivity extends AppCompatActivity implements BleWrapper
     protected void onPause() {
         super.onPause();
 
-//        mBleWrapper.stopMonitoringRssiValue();
-//        mBleWrapper.diconnect();
-//        mBleWrapper.close();
+        mBleWrapper.stopMonitoringRssiValue();
+        mBleWrapper.diconnect();
+        mBleWrapper.close();
     };
 
     @Override
