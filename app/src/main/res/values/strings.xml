@@ -19,6 +19,7 @@
     <string name="title_beats">My beats</string>
     <string name="title_beatcontent">My beats</string>
     <string name="title_beatcollection">Collect beat</string>
+    <string name="title_activity_journal">Journals</string>
 
     <string name="title_activity_peripheral">Peripheral</string>
     <string name="title_activity_playpovistory">Play Povi Story</string>

@@ -30,8 +30,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.antwish.povi.familyconnect.ble.PeripheralActivity;
-import com.antwish.povi.familyconnect.ble.ScanningActivity;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.analytics.HitBuilders;
@@ -50,8 +48,8 @@ public class DashboardActivity extends AppCompatActivity
         ChildrenFragment.OnChildrenToolbarElevationListener,
         BeatsFragment.OnBeatsToolbarElevationListener,
         ProfileFragment.OnProfileUpdateListener,
-        TreasureChestFragment.OnBeatsToolbarElevationListener
-        {
+        TreasureChestFragment.OnBeatsToolbarElevationListener,
+        SubscriptionFragment.OnSubscriptionsToolbarElevationListener {
 
     private static final String POVI_TOKEN = "povi_token";
     private static final String POVI_USERID = "povi_userid";
@@ -138,69 +136,83 @@ public class DashboardActivity extends AppCompatActivity
                         FragmentManager fragmentManager = getFragmentManager();
                         FragmentTransaction trans = fragmentManager.beginTransaction();
                         switch (selection.getItemId()) {
-                            case R.id.userProfile: {
-                                ProfileFragment fragment = new ProfileFragment();
-                                trans.replace(R.id.nav_contentframe, fragment);
+//                            case R.id.userProfile: {
+//                                ProfileFragment fragment = new ProfileFragment();
+//                                trans.replace(R.id.nav_contentframe, fragment);
+//                                mCurrentSelectedPosition = 0;
+//                            }
+                            case R.id.conversationStarter: {
+                                trans.replace(R.id.nav_contentframe, new StoryFragment());
                                 mCurrentSelectedPosition = 0;
                             }
                             break;
-                            case R.id.children: {
-                                ChildrenFragment fragment = new ChildrenFragment();
-                                trans.replace(R.id.nav_contentframe, fragment, "children_fragment");
+//                            case R.id.children: {
+//                                ChildrenFragment fragment = new ChildrenFragment();
+//                                trans.replace(R.id.nav_contentframe, fragment, "children_fragment");
+//                                mCurrentSelectedPosition = 1;
+//                            }
+                            case R.id.journal: {
+                                trans.replace(R.id.nav_contentframe, new JournalFragment());
                                 mCurrentSelectedPosition = 1;
                             }
                             break;
-                            case R.id.tip: {
-                                //TipjarFragment fragment = new TipjarFragment();
-                                BeatsFragment fragment = new BeatsFragment();
-                                trans.replace(R.id.nav_contentframe, fragment);
+//                            case R.id.tip: {
+//                                //TipjarFragment fragment = new TipjarFragment();
+//                                BeatsFragment fragment = new BeatsFragment();
+//                                trans.replace(R.id.nav_contentframe, fragment);
+//                                mCurrentSelectedPosition = 2;
+//                            }
+                            case R.id.subscription: {
+                                trans.replace(R.id.nav_contentframe, new SubscriptionFragment2());
                                 mCurrentSelectedPosition = 2;
                             }
                             break;
-                            case R.id.treasurechest: {
-                                TreasureChestFragment fragment = new TreasureChestFragment();
-                                trans.replace(R.id.nav_contentframe, fragment);
+//                            case R.id.treasurechest: {
+//                                TreasureChestFragment fragment = new TreasureChestFragment();
+//                                trans.replace(R.id.nav_contentframe, fragment);
+//                                mCurrentSelectedPosition = 3;
+//                            }
+                            case R.id.settings: {
+                                trans.replace(R.id.nav_contentframe, new SettingsFragment());
                                 mCurrentSelectedPosition = 3;
                             }
                             break;
-
-                            case R.id.help: {
-                                /*HelpFragment fragment = new HelpFragment();
-                                trans.replace(R.id.nav_contentframe, fragment);
-                                mCurrentSelectedPosition = 4;*/
-                                openPoviPage();
-                            }
-                            break;
-                            case R.id.settings: {
-                                trans.replace(R.id.nav_contentframe, new SettingsFragment());
-                                mCurrentSelectedPosition = 5;
-                            }
-                            break;
-                            case R.id.logout: {
-                                builder.show();
-                                mCurrentSelectedPosition = 6;
-                            }
-                            break;
-                            case R.id.povistory: {
-                                mCurrentSelectedPosition = 7;
-                                final Intent intent = new Intent(getApplicationContext(), ScanningActivity.class);
-                                intent.putExtra(PeripheralActivity.EXTRAS_TYPE, "play");
-                                startActivity(intent);
-                            }
-                            break;
-                            case R.id.uploadpovistory: {
-                                mCurrentSelectedPosition = 8;
-                                final Intent intent = new Intent(getApplicationContext(), ScanningActivity.class);
-                                intent.putExtra(PeripheralActivity.EXTRAS_TYPE, "upload");
-                                startActivity(intent);
-                            }
-                            break;
+//
+//                            case R.id.help: {
+//                                /*HelpFragment fragment = new HelpFragment();
+//                                trans.replace(R.id.nav_contentframe, fragment);
+//                                mCurrentSelectedPosition = 4;*/
+//                                openPoviPage();
+//                            }
+//                            break;
+//                            case R.id.settings: {
+//                                trans.replace(R.id.nav_contentframe, new SettingsFragment());
+//                                mCurrentSelectedPosition = 5;
+//                            }
+//                            break;
+//                            case R.id.logout: {
+//                                builder.show();
+//                                mCurrentSelectedPosition = 6;
+//                            }
+//                            break;
+//                            case R.id.povistory: {
+//                                mCurrentSelectedPosition = 7;
+//                                final Intent intent = new Intent(getApplicationContext(), ScanningActivity.class);
+//                                intent.putExtra(PeripheralActivity.EXTRAS_TYPE, "play");
+//                                startActivity(intent);
+//                            }
+//                            break;
+//                            case R.id.uploadpovistory: {
+//                                mCurrentSelectedPosition = 8;
+//                                final Intent intent = new Intent(getApplicationContext(), ScanningActivity.class);
+//                                intent.putExtra(PeripheralActivity.EXTRAS_TYPE, "upload");
+//                                startActivity(intent);
+//                            }
+//                            break;
                         }
 
-                        if ((selection.getItemId() != R.id.logout)) {
                             trans.addToBackStack(null);
                             trans.commit();
-                        }
                     }
                 };
 
@@ -208,7 +220,7 @@ public class DashboardActivity extends AppCompatActivity
                 SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 boolean notificationScheduled = settings.getBoolean(POVI_NOTIFICATION_SCHEDULE, false);
 
-                if(!notificationScheduled) {
+                if (!notificationScheduled) {
                     Calendar cal = Calendar.getInstance();
                     cal.set(Calendar.HOUR_OF_DAY, 18);
                     cal.set(Calendar.MINUTE, 2);
@@ -245,47 +257,31 @@ public class DashboardActivity extends AppCompatActivity
             }
         });
 
+//        FragmentManager fragmentManager = getFragmentManager();
+//        SubscriptionFragment fragment = new SubscriptionFragment();
+//        FragmentTransaction trans = fragmentManager.beginTransaction();
+//        trans.replace(R.id.nav_contentframe, fragment);
+//        trans.commit();
+//        setTitle("Subscription");
 
-
-        // Set tipjar frame as default
-        /**
-         * Please refer the following to understand why this is added.
-         * http://stackoverflow.com/questions/8474104/android-fragment-lifecycle-over-orientation-changes
-         */
-        //if (savedInstanceState == null) {
-        Bundle bundle = this.getIntent().getExtras();
-        if (bundle == null || bundle.getInt("callerID") <= 0){
-            FragmentManager fragmentManager = getFragmentManager();
-            //TipjarFragment fragment = new TipjarFragment();
-            BeatsFragment fragment = new BeatsFragment();
-            FragmentTransaction trans = fragmentManager.beginTransaction();
-            trans.replace(R.id.nav_contentframe, fragment);
-            trans.commit();
-            setTitle("My beats");
-        }
-        else{
-            FragmentManager fragmentManager = getFragmentManager();
-            //TipjarFragment fragment = new TipjarFragment();
-            TreasureChestFragment fragment = new TreasureChestFragment();
-            FragmentTransaction trans = fragmentManager.beginTransaction();
-            trans.replace(R.id.nav_contentframe, fragment);
-            trans.commit();
-            setTitle("My treasure chest");
-        }
+        FragmentManager fragmentManager = getFragmentManager();
+        StoryFragment fragment = new StoryFragment();
+        FragmentTransaction trans = fragmentManager.beginTransaction();
+        trans.replace(R.id.nav_contentframe, fragment);
+        trans.commit();
+        setTitle("Conversation Starter");
 
         // Set drawer user's email and name
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        String email = sharedPref.getString(POVI_USERID, null);
-        String name = sharedPref.getString(POVI_USERNAME, null);
+        String email = sharedPref.getString(POVI_USERID, "povi@povi.me");
+//        String email = sharedPref.getString(POVI_USERID, null);
+        String name = sharedPref.getString(POVI_USERNAME, "James");
+//        String name = sharedPref.getString(POVI_USERNAME, null);
         TextView headerEmail = (TextView) findViewById(R.id.headerEmail);
         headerEmail.setText(email);
         TextView headerName = (TextView) findViewById(R.id.headerName);
         headerName.setText(name);
-
-        // Set user's avatar
-        //new ProfileImageTask().execute();
     }
-
 
 
     private void setUpToolbar() {
@@ -350,8 +346,7 @@ public class DashboardActivity extends AppCompatActivity
             Intent i = new Intent(getApplicationContext(), WelcomeActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
-        }
-        else{
+        } else {
             Snackbar.make(mDrawerLayout, "Logout failed!", Snackbar.LENGTH_SHORT).show();
         }
     }
@@ -387,8 +382,8 @@ public class DashboardActivity extends AppCompatActivity
     @Override
     public void onToolbarElevationListener(float elevation) {
         //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            //mToolbar.setElevation(elevation);
-            cardToolbar.setCardElevation(elevation);
+        //mToolbar.setElevation(elevation);
+        cardToolbar.setCardElevation(elevation);
         //}
 
     }
@@ -405,7 +400,7 @@ public class DashboardActivity extends AppCompatActivity
         headerName.setText(name);
     }
 
-    private  class ProfileImageTask extends AsyncTask<String, Integer, Boolean> {
+    private class ProfileImageTask extends AsyncTask<String, Integer, Boolean> {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
@@ -417,11 +412,10 @@ public class DashboardActivity extends AppCompatActivity
 
             ImageView avatar = (ImageView) findViewById(R.id.headerAvatar);
             // Directly go to the dashboard in case of success
-            if (result){
+            if (result) {
 
                 avatar.setImageBitmap(userPicture);
-            }
-            else{
+            } else {
                 // Set POVI avatar as default
                 avatar.setImageResource(R.drawable.navdrawer_icon);
             }

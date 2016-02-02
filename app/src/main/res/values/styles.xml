@@ -86,4 +86,14 @@
         <item name="tabTextAppearance">@style/PoviTabText</item>
         <item name="tabSelectedTextColor">@color/red</item>
     </style>
+
+    <style name="SubscriptionTabText" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/grey_dark</item>
+    </style>
+
+    <style name="SubscriptionTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/SubscriptionTabText</item>
+        <item name="tabSelectedTextColor">@color/red</item>
+    </style>
 </resources>

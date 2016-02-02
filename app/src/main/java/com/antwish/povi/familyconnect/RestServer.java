@@ -780,6 +780,39 @@ public class RestServer {
         return null;
     }
 
+    public static List<PoviSubscription> getSubscriptionByType(String token, int start, int count, Long lastSubscriptionId, PoviSubscriptiontype subscriptiontype){
+        //TODO: hook up server to provide subscription list per user
+        List<PoviSubscription> subscriptions = new ArrayList<>();
+
+        switch (subscriptiontype){
+            case CATEGORY:
+                subscriptions.add(new PoviSubscription("Povi World Adventures", 1, 12, 14.99f, PoviSubscriptiontype.CATEGORY, "Povi World Adventures"));
+                subscriptions.add(new PoviSubscription("Povi At School", 1, 3, 5.99f, PoviSubscriptiontype.CATEGORY, "Povi At School"));
+                subscriptions.add(new PoviSubscription("Povi At Home", 1, 3, 5.99f, PoviSubscriptiontype.CATEGORY, "Povi At Home"));
+                subscriptions.add(new PoviSubscription("Povi Goes Shopping", 1, 3, 5.99f, PoviSubscriptiontype.CATEGORY, "Povi Goes Shopping"));
+                subscriptions.add(new PoviSubscription("Category 5", 1, 3, 5.99f, PoviSubscriptiontype.CATEGORY, "Category 5"));
+                subscriptions.add(new PoviSubscription("Category 6", 1, 3, 5.99f, PoviSubscriptiontype.CATEGORY, "Category 6"));
+                break;
+            case AUTHOR:
+                subscriptions.add(new PoviSubscription("From Psychologist", 1, 12, 14.99f, PoviSubscriptiontype.AUTHOR, "Olyga"));
+                subscriptions.add(new PoviSubscription("Author 2", 1, 3, 5.99f, PoviSubscriptiontype.AUTHOR, "Ahtor 2"));
+                subscriptions.add(new PoviSubscription("Povi At Home", 1, 3, 5.99f, PoviSubscriptiontype.AUTHOR, "Povi At Home"));
+                subscriptions.add(new PoviSubscription("Povi Goes Shopping", 1, 3, 5.99f, PoviSubscriptiontype.AUTHOR, "Povi Goes Shopping"));
+                subscriptions.add(new PoviSubscription("Category 5", 1, 3, 5.99f, PoviSubscriptiontype.AUTHOR, "Category 5"));
+                subscriptions.add(new PoviSubscription("Category 6", 1, 3, 5.99f, PoviSubscriptiontype.AUTHOR, "Category 6"));
+                break;
+            case LIBRARY:
+                subscriptions.add(new PoviSubscription("Povi World Adventures", 1, 12, 14.99f, PoviSubscriptiontype.LIBRARY, "Povi World Adventures"));
+                subscriptions.add(new PoviSubscription("Povi At School", 1, 3, 5.99f, PoviSubscriptiontype.LIBRARY, "Povi At School"));
+                subscriptions.add(new PoviSubscription("Povi At Home", 1, 3, 5.99f, PoviSubscriptiontype.LIBRARY, "Povi At Home"));
+                subscriptions.add(new PoviSubscription("Povi Goes Shopping", 1, 3, 5.99f, PoviSubscriptiontype.LIBRARY, "Povi Goes Shopping"));
+                subscriptions.add(new PoviSubscription("Category 5", 1, 3, 5.99f, PoviSubscriptiontype.LIBRARY, "Category 5"));
+                subscriptions.add(new PoviSubscription("Category 6", 1, 3, 5.99f, PoviSubscriptiontype.LIBRARY, "Category 6"));
+                break;
+        }
+
+        return subscriptions;
+    }
     public static List<Comment> getCommentsShared(ParentingTipId tipId, String token, int start, int count, Long lastCommentId) {
         String COMMENTID = "comment_id";
         TipCommentFindByGetCommentsSharedRequestBuilder tipBuilder = new TipCommentRequestBuilders().findByGetCommentsShared();
@@ -808,6 +841,17 @@ public class RestServer {
         }
 
         return null;
+    }
+
+    public static PoviStory getStory()
+    {
+        // TODO: get story and associated follow up questions from server
+        String[] questions = new String[3];
+        questions[0] = "How does it feel to be left out of a game?";
+        questions[1] = "Is it hard to be asked to be included? Why?";
+        questions[2] = "What does it mean to be disappointed?";
+        String fullStory = "Shin my classmate came over to play today. Although I repeatedly told her to stay away from the porcelain Russian doll, she did not care. She accidentally broke it but told me to hide it from my mommy or tell mommy that my brother was the one. What should I do? If I tell on her will she play with me again? But I don't want to tell lies either and get my brother in trouble. Will my mommy find out the truth and bar her from coming to our house again? Do I really want to keep a friend like her?";
+        return new PoviStory("Povi", "Perspective Taking, Integrity", questions, fullStory, "Povi's response here", "Do I want to keep a friend like her?");
     }
 
     public static BeatCommentArray getBeatComments(final String token, final Long commentId) {

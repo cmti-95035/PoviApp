@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="0dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardBackgroundColor="@color/white"
+    card_view:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/playContent"
+            android:layout_weight="1"
+            android:src="@drawable/audio_header"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:layout_below="@+id/journal_date" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/journal_title"
+            android:text="Title"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:inputType="textCapWords"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textStyle="italic"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/journal_date"
+            android:inputType="textMultiLine|textUri"
+            android:text="date"
+            android:layout_below="@+id/journal_title"
+            android:layout_alignLeft="@+id/journal_title"
+            android:layout_alignStart="@+id/journal_title"
+            android:ellipsize="end"
+            android:maxLines="2" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

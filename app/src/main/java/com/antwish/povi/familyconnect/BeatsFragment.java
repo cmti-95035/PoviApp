@@ -131,8 +131,8 @@ public class BeatsFragment extends Fragment {
         Log.i("GAV4", "sent screen");
 
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
-        final String currentToken = sharedPref.getString(POVI_TOKEN, "");
-        final String currentUser = sharedPref.getString(POVI_USERID, "");
+        final String currentToken = sharedPref.getString(POVI_TOKEN, "ccfb52c193e57a7745d6e7e434ea206446b1c739");
+        final String currentUser = sharedPref.getString(POVI_USERID, "a1@gmail.com");
 
         if(!currentToken.isEmpty() && !currentUser.isEmpty()) {
             boolean journalNotification = getActivity().getIntent().getBooleanExtra(FROM_JOURNAL_REMINDER, false);
@@ -405,7 +405,7 @@ public class BeatsFragment extends Fragment {
         mDateSpinner.setVisibility(View.VISIBLE);
         expert_view = (TextView)rootView.findViewById(R.id.expertsLink);
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
-        final String currentToken = sharedPref.getString(POVI_TOKEN, "");
+        final String currentToken = sharedPref.getString(POVI_TOKEN, "ccfb52c193e57a7745d6e7e434ea206446b1c739");
         final WebLink webLink = RestServer.getWebLink(currentToken);
         if (webLink != null){
             String text="<a href='" + webLink.getLink() + "'> <b>" + webLink.getTitle() + "</b></a>";
@@ -418,8 +418,8 @@ public class BeatsFragment extends Fragment {
 
                     // send an event to indicate user visits web link provided from the tip of the day page
                     SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
-                    final String currentToken = sharedPref.getString(POVI_TOKEN, "");
-                    final String currentUser = sharedPref.getString(POVI_USERID, "");
+                    final String currentToken = sharedPref.getString(POVI_TOKEN, "ccfb52c193e57a7745d6e7e434ea206446b1c739");
+                    final String currentUser = sharedPref.getString(POVI_USERID, "a1@gmail.com");
                     if(!currentToken.isEmpty() && !currentUser.isEmpty())
                         new SendEventTask().execute(currentToken, currentUser, "Visit weblink: " + webLink.getLink(GetMode.NULL), EventType.TIPOFTHEDAY.toString());
                 }
@@ -494,7 +494,7 @@ public class BeatsFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
-        final String currentToken = sharedPref.getString(POVI_TOKEN, "");
+        final String currentToken = sharedPref.getString(POVI_TOKEN, "ccfb52c193e57a7745d6e7e434ea206446b1c739");
         switch(item.getItemId()){
             case R.id.refresh_tips:
                 // Get date
@@ -559,7 +559,7 @@ public class BeatsFragment extends Fragment {
         public List<ParentingTip> loadInBackground() {
             // Retrieve beats from server
             SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext);
-            String currentToken = sharedPref.getString(POVI_TOKEN, "");
+            String currentToken = sharedPref.getString(POVI_TOKEN, "ccfb52c193e57a7745d6e7e434ea206446b1c739");
             User currentUser = RestServer.getUserProfile(currentToken);
             String currentEmail = currentUser.getEmail(GetMode.DEFAULT);
             List<ParentingTip> data = null;
@@ -848,7 +848,7 @@ public class BeatsFragment extends Fragment {
         public List<Comment> loadInBackground() {
             // Retrieve beats from server
             SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(mContext);
-            String currentToken = sharedPref.getString(POVI_TOKEN, "");
+            String currentToken = sharedPref.getString(POVI_TOKEN, "ccfb52c193e57a7745d6e7e434ea206446b1c739");
             List<Comment> data = null;
             if (mTipId != null)
                 if (lastcommentid != -1)

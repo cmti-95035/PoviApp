@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
-        <item
+        <!--item
             android:id="@+id/tip"
             android:icon="@drawable/ic_today_grey_24dp"
             android:checked="true"
@@ -31,15 +31,37 @@
         <item
             android:id="@+id/logout"
             android:icon="@drawable/ic_power_settings_new_grey_24dp"
-            android:title="Log out" />
+            android:title="Log out" /-->
 
-        <item
+        <!-- the following items are intended for AGM version of the Povi app -->
+        <!--item
             android:id="@+id/povistory"
             android:icon="@drawable/ic_face_grey_24dp"
             android:title="Play Povi Story" />
         <item
             android:id="@+id/uploadpovistory"
             android:icon="@drawable/ic_face_grey_24dp"
-            android:title="Upload New Povi Story" />
+            android:title="Upload New Povi Story" /-->
+
+        <item
+            android:id="@+id/conversationStarter"
+            android:icon="@drawable/ic_today_grey_24dp"
+            android:checked="true"
+            android:title="Conversation Starter" />
+
+        <item
+            android:id="@+id/journal"
+            android:icon="@drawable/ic_chrome_reader_mode_grey_24dp"
+            android:title="Journal" />
+
+        <item
+            android:id="@+id/subscription"
+            android:icon="@drawable/subscription"
+            android:title="Subscription" />
+
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_settings_grey_24dp"
+            android:title="Settings" />
     </group>
 </menu>
