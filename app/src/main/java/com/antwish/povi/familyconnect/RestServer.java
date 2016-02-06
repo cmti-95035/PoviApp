@@ -786,28 +786,36 @@ public class RestServer {
 
         switch (subscriptiontype){
             case CATEGORY:
-                subscriptions.add(new PoviSubscription("Povi World Adventures", 1, 12, 14.99f, PoviSubscriptiontype.CATEGORY, "Povi World Adventures"));
-                subscriptions.add(new PoviSubscription("Povi At School", 1, 3, 5.99f, PoviSubscriptiontype.CATEGORY, "Povi At School"));
-                subscriptions.add(new PoviSubscription("Povi At Home", 1, 3, 5.99f, PoviSubscriptiontype.CATEGORY, "Povi At Home"));
-                subscriptions.add(new PoviSubscription("Povi Goes Shopping", 1, 3, 5.99f, PoviSubscriptiontype.CATEGORY, "Povi Goes Shopping"));
-                subscriptions.add(new PoviSubscription("Category 5", 1, 3, 5.99f, PoviSubscriptiontype.CATEGORY, "Category 5"));
-                subscriptions.add(new PoviSubscription("Category 6", 1, 3, 5.99f, PoviSubscriptiontype.CATEGORY, "Category 6"));
+                subscriptions.add(new PoviSubscription("Friendship is a relationship of mutual affection \nbetween two or more people.", R.drawable.friendship, 3, 5.99f, PoviSubscriptiontype.CATEGORY, "Friendship"));
+                subscriptions.add(new PoviSubscription("New school is challenging", R.drawable.newschool, 3, 5.99f, PoviSubscriptiontype.CATEGORY, "New School"));
+                subscriptions.add(new PoviSubscription("Povi and Gooba", R.drawable.poviandgooba, 3, 5.99f, PoviSubscriptiontype.CATEGORY, "Povi and Gooba"));
+                subscriptions.add(new PoviSubscription("Summer is Here", R.drawable.summerishere, 3, 5.99f, PoviSubscriptiontype.CATEGORY, "Summer is Here"));
+                subscriptions.add(new PoviSubscription("Povi and Gooba travel around the world", R.drawable.aroundtheworld, 12, 5.99f, PoviSubscriptiontype.CATEGORY, "Around The World"));
+                subscriptions.add(new PoviSubscription("Weekend Fun", R.drawable.weekendfun, 3, 5.99f, PoviSubscriptiontype.CATEGORY, "Weekend Fun"));
+
                 break;
             case AUTHOR:
-                subscriptions.add(new PoviSubscription("From Psychologist", 1, 12, 14.99f, PoviSubscriptiontype.AUTHOR, "Olyga"));
-                subscriptions.add(new PoviSubscription("Author 2", 1, 3, 5.99f, PoviSubscriptiontype.AUTHOR, "Ahtor 2"));
-                subscriptions.add(new PoviSubscription("Povi At Home", 1, 3, 5.99f, PoviSubscriptiontype.AUTHOR, "Povi At Home"));
-                subscriptions.add(new PoviSubscription("Povi Goes Shopping", 1, 3, 5.99f, PoviSubscriptiontype.AUTHOR, "Povi Goes Shopping"));
-                subscriptions.add(new PoviSubscription("Category 5", 1, 3, 5.99f, PoviSubscriptiontype.AUTHOR, "Category 5"));
-                subscriptions.add(new PoviSubscription("Category 6", 1, 3, 5.99f, PoviSubscriptiontype.AUTHOR, "Category 6"));
+                subscriptions.add(new PoviSubscription("Journalist and Entrepreneur, Content Manager at POVI and Owner of Red Basket Personal Chef\n" +
+                        "Certificate in Publicity and Design (High School- CSVP- Brazil), BA in Journalism (Universidade Federal Rio de Janeiro, Brazil) , MA in International Studies (The University of Birmingham, UK),  Personal Chef Certificate (USPCA, US)\n", R.drawable.anna_headshot, 12, 5.99f, PoviSubscriptiontype.AUTHOR, "Anna Muggiati"));
+                subscriptions.add(new PoviSubscription("PhD, Developmental Psychology, Cornell University\n" +
+                        "Daphna loves kids and is a proud aunt! She's also extremely passionate about promoting children’s wellbeing through helping them understand and cope with their emotions.\n", R.drawable.daphna_headshot, 3, 5.99f, PoviSubscriptiontype.AUTHOR, "Daphna Ram"));
+                subscriptions.add(new PoviSubscription("Mother of two (teenager and adult).  BA in Sociology, MS in Advertising\n" +
+                        "Mallika's parenting has improved with experience and she is still learning. All her knowledge comes from reading parenting books and integrating with her childhood - which was in India, at home with extended family (mostly Unstructured and Unsupervised) and at a convent boarding school Super Structured and Supervised!) She was parented in an Authoritarian way (you obeyed the adults) and her parenting style is Authoritative (guide but do not control).\n", R.drawable.mallika_headshot, 3, 5.99f, PoviSubscriptiontype.AUTHOR, "Mallika Sankaran"));
+                subscriptions.add(new PoviSubscription("Community Psychology PhD. She is a mother of a 6 year girl and an 8 year old boy. \n" +
+                        "Healthy Social Emotional Development in young children is related to their well-being and is a predictor of later academic, social, and emotional success. Just like kids learn to read and do math, they can and should learn how to, among others, identify and control their emotions, form and maintain relationships, and work through conflicts. By helping our children build social-emotional confidence, we are setting them on a path of becoming happier and healthier adults.\n", R.drawable.olya_headshot, 3, 5.99f, PoviSubscriptiontype.AUTHOR, "Olya Glantsman"));
+                subscriptions.add(new PoviSubscription("MBA Babson College, MSEE Clarkson University\n" +
+                        "Huz loves to spend time with his kids - 8 year old boy and 3 year old girl. Parenting is full of challenges but the rewards he gets when his kids hug him and say that they love him is no comparison to anything else in the world. He takes his talents in creativity into my communications with his children, and loves to also share it with the world.", R.drawable.huz_head, 3, 5.99f, PoviSubscriptiontype.AUTHOR, "Huz Dalal"));
+                subscriptions.add(new PoviSubscription("Public School Teacher,  K-8 Public School Counselor, Easterbrook Discovery School, San Jose, CA\n" +
+                        "BA in Elementary Education, MA in Education, MA in School Counseling\n" +
+                        "Yonit loves everything about working with children. She loves being able to see children develop and grow with appropriate support and intervention.  It is so rewarding to work with a population that want to feel better and are present to listen, learn, and make positive changes that improve their ability to function in all areas of their life.\n", R.drawable.yonit, 3, 5.99f, PoviSubscriptiontype.AUTHOR, "Yonit Parenti"));
                 break;
             case LIBRARY:
-                subscriptions.add(new PoviSubscription("Povi World Adventures", 1, 12, 14.99f, PoviSubscriptiontype.LIBRARY, "Povi World Adventures"));
-                subscriptions.add(new PoviSubscription("Povi At School", 1, 3, 5.99f, PoviSubscriptiontype.LIBRARY, "Povi At School"));
-                subscriptions.add(new PoviSubscription("Povi At Home", 1, 3, 5.99f, PoviSubscriptiontype.LIBRARY, "Povi At Home"));
-                subscriptions.add(new PoviSubscription("Povi Goes Shopping", 1, 3, 5.99f, PoviSubscriptiontype.LIBRARY, "Povi Goes Shopping"));
-                subscriptions.add(new PoviSubscription("Category 5", 1, 3, 5.99f, PoviSubscriptiontype.LIBRARY, "Category 5"));
-                subscriptions.add(new PoviSubscription("Category 6", 1, 3, 5.99f, PoviSubscriptiontype.LIBRARY, "Category 6"));
+                subscriptions.add(new PoviSubscription("Around The World", R.drawable.aroundtheworld, 12, 5.99f, PoviSubscriptiontype.LIBRARY, "Travel Around The World"));
+                subscriptions.add(new PoviSubscription("Friendship", R.drawable.friendship, 3, 5.99f, PoviSubscriptiontype.LIBRARY, "Friendship"));
+                subscriptions.add(new PoviSubscription("New School", R.drawable.newschool, 3, 5.99f, PoviSubscriptiontype.LIBRARY, "New School"));
+                subscriptions.add(new PoviSubscription("Weekend Fun", R.drawable.weekendfun, 3, 5.99f, PoviSubscriptiontype.LIBRARY, "Weekend Fun"));
+                subscriptions.add(new PoviSubscription("Summer is Here", R.drawable.summerishere, 3, 5.99f, PoviSubscriptiontype.LIBRARY, "Summer is Here"));
+                subscriptions.add(new PoviSubscription("Povi and Gooba", R.drawable.poviandgooba, 3, 5.99f, PoviSubscriptiontype.LIBRARY, "Povi and Gooba"));
                 break;
         }
 
@@ -848,10 +856,11 @@ public class RestServer {
         // TODO: get story and associated follow up questions from server
         String[] questions = new String[3];
         questions[0] = "How does it feel to be left out of a game?";
-        questions[1] = "Is it hard to be asked to be included? Why?";
-        questions[2] = "What does it mean to be disappointed?";
-        String fullStory = "Shin my classmate came over to play today. Although I repeatedly told her to stay away from the porcelain Russian doll, she did not care. She accidentally broke it but told me to hide it from my mommy or tell mommy that my brother was the one. What should I do? If I tell on her will she play with me again? But I don't want to tell lies either and get my brother in trouble. Will my mommy find out the truth and bar her from coming to our house again? Do I really want to keep a friend like her?";
-        return new PoviStory("Povi", "Perspective Taking, Integrity", questions, fullStory, "Povi's response here", "Do I want to keep a friend like her?");
+        questions[1] = "Is it hard to ask to be included? Why? What should someone do if they can’t be included?";
+        questions[2] = "What do you do when things don't go your way? How do you make yourself feel better when things don't go your way?";
+        String fullStory = "Today, I was left out of a game of four square on the playground. Even though I tried to be included, the kids said there was no room for me in the game.\n" +
+                "Could you help me figure out how I feel?";
+        return new PoviStory("Daphna Ram", "Relationship, Emotion Recognition", questions, fullStory, "I feel sad that I wasn’t included in the game, and maybe a little mad too. I ended up going up to other kids on the playground who were playing tag and asked them if I could play with them, and they let me. I think I’ll try and ask if I can be in the four-square game again tomorrow.", "Left Out Of A Game");
     }
 
     public static BeatCommentArray getBeatComments(final String token, final Long commentId) {

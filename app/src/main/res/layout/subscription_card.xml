@@ -17,17 +17,17 @@
         android:background="@color/white">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
             android:id="@+id/subscriptionPreview"
             android:src="@drawable/experts_avatar"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitXY" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/category"
             android:text="Development Category"
             android:paddingTop="8dp"
@@ -36,20 +36,7 @@
             android:paddingLeft="16dp"
             android:textColor="@color/black"
             android:maxLines="3"
-            android:ellipsize="end" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/numberOfStories"
-            android:text="Number Of Stories"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:paddingRight="16dp"
-            android:paddingLeft="16dp"
-            android:textColor="@color/black"
-            android:maxLines="3"
+            android:gravity="center_horizontal"
             android:ellipsize="end" />
 
     </LinearLayout>

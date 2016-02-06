@@ -95,6 +95,9 @@ public class StoryFragment extends Fragment {
 
         TextView title = (TextView)view.findViewById(R.id.storytitle);
         title.setText(story.getTitle());
+
+        TextView excerpt = (TextView)view.findViewById(R.id.storyexcerpt);
+        excerpt.setText(story.getFullStory().substring(0, 70) + "...");
     }
 
     private void expand(PoviStory currentStory){

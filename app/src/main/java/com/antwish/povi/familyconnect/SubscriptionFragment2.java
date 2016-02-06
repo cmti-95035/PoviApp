@@ -49,7 +49,7 @@ public class SubscriptionFragment2 extends Fragment {
     private List<PoviSubscriptiontype> mSubscriptionTypes = new ArrayList<>();
 
     private ProgressBar mProgressBar;
-    private TextView title, numberOfStories, description;
+    private TextView title, description;
     private ImageView subscriptionImage;
     private Button priceButton;
 
@@ -70,13 +70,13 @@ public class SubscriptionFragment2 extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(false);
 
-        mSubscriptionTypes.add(PoviSubscriptiontype.CATEGORY);
         mSubscriptionTypes.add(PoviSubscriptiontype.AUTHOR);
+        mSubscriptionTypes.add(PoviSubscriptiontype.CATEGORY);
         mSubscriptionTypes.add(PoviSubscriptiontype.LIBRARY);
 
         mSubscriptionList = new ArrayList<>();
-        mSubscriptionList.add(RestServer.getSubscriptionByType(null, 0, 0, 0L, PoviSubscriptiontype.CATEGORY));
         mSubscriptionList.add(RestServer.getSubscriptionByType(null, 0, 0, 0L, PoviSubscriptiontype.AUTHOR));
+        mSubscriptionList.add(RestServer.getSubscriptionByType(null, 0, 0, 0L, PoviSubscriptiontype.CATEGORY));
         mSubscriptionList.add(RestServer.getSubscriptionByType(null, 0, 0, 0L, PoviSubscriptiontype.LIBRARY));
     }
 
@@ -88,9 +88,10 @@ public class SubscriptionFragment2 extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_subscription, container, false);
 
         tabs = (TabLayout) rootView.findViewById(R.id.tab);
-        tabs.addTab(tabs.newTab().setText("CATEGORIES"));
         tabs.addTab(tabs.newTab().setText("AUTHORS"));
-        tabs.addTab(tabs.newTab().setText("LIBRARY"));
+        tabs.addTab(tabs.newTab().setText("CATEGORIES"));
+
+//        tabs.addTab(tabs.newTab().setText("LIBRARY"));
         tabs.getTabAt(0).select();
 
         tabs.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -99,8 +100,10 @@ public class SubscriptionFragment2 extends Fragment {
                 // Replace contents
                 switch(mSubscriptionTypes.get(tab.getPosition())){
                     case CATEGORY:
+                        priceButton.setVisibility(View.VISIBLE);
                         break;
                     case AUTHOR:
+                        priceButton.setVisibility(View.INVISIBLE);
                         break;
                     case LIBRARY:
                         break;
@@ -112,9 +115,9 @@ public class SubscriptionFragment2 extends Fragment {
                 mAdapter.notifyDataSetChanged();
 
                 title.setText(mSubscriptionList.get(tabs.getSelectedTabPosition()).get(0).getTitle());
-                numberOfStories.setText("Number Of Stories: " + mSubscriptionList.get(tabs.getSelectedTabPosition()).get(0).getNumberOfStories());
                 description.setText(mSubscriptionList.get(tabs.getSelectedTabPosition()).get(0).getDescription());
                 priceButton.setText("$" + mSubscriptionList.get(tabs.getSelectedTabPosition()).get(0).getPrice());
+                subscriptionImage.setImageResource(mSubscriptionList.get(tabs.getSelectedTabPosition()).get(0).getImageId());
             }
 
             @Override
@@ -143,7 +146,7 @@ public class SubscriptionFragment2 extends Fragment {
         mRecyclerView.addOnScrollListener(new MyRecyclerViewOnScrollListener());
 
         AppCompatActivity activity = (AppCompatActivity) getActivity();
-        activity.getSupportActionBar().setDisplayShowTitleEnabled(false);
+        activity.getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         mProgressBar = (ProgressBar) rootView.findViewById(R.id.progressBar);
 
@@ -153,12 +156,11 @@ public class SubscriptionFragment2 extends Fragment {
 
         title = (TextView) rootView.findViewById(R.id.subscriptionTitle);
         title.setText(mSubscriptionList.get(0).get(0).getTitle());
-        numberOfStories = (TextView) rootView.findViewById(R.id.numberOfSubs);
-        numberOfStories.setText("Number Of Stories: " + mSubscriptionList.get(0).get(0).getNumberOfStories());
         description = (TextView) rootView.findViewById(R.id.storytitle);
         description.setText(mSubscriptionList.get(0).get(0).getDescription());
 
         subscriptionImage = (ImageView) rootView.findViewById(R.id.subscriptionImage);
+        subscriptionImage.setImageResource(mSubscriptionList.get(0).get(0).getImageId());
         priceButton = (Button) rootView.findViewById(R.id.price);
 
         priceButton.setText("$" + mSubscriptionList.get(0).get(0).getPrice());
@@ -233,13 +235,11 @@ public class SubscriptionFragment2 extends Fragment {
 
         public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener{
             private TextView category;
-            private TextView numberOfStories;
             private ImageView preview;
 
             public ViewHolder(View itemView) {
                 super(itemView);
                 category = (TextView) itemView.findViewById(R.id.category);
-                numberOfStories = (TextView) itemView.findViewById(R.id.numberOfStories);
                 preview = (ImageView) itemView.findViewById(R.id.subscriptionPreview);
                 itemView.setOnClickListener(this);
                 itemView.setOnLongClickListener(this);
@@ -248,10 +248,11 @@ public class SubscriptionFragment2 extends Fragment {
             @Override
             public void onClick(View v) {
                 // Open content details activity
-                title.setText(mSubscriptionList.get(tabs.getSelectedTabPosition()).get(getAdapterPosition()).getTitle());
-                numberOfStories.setText("Number Of Stories: " + mSubscriptionList.get(tabs.getSelectedTabPosition()).get(getAdapterPosition()).getNumberOfStories());
-                description.setText(mSubscriptionList.get(tabs.getSelectedTabPosition()).get(getAdapterPosition()).getDescription());
+                PoviSubscription poviSubscription = mSubscriptionList.get(tabs.getSelectedTabPosition()).get(getAdapterPosition());
+                title.setText(poviSubscription.getTitle());
+                description.setText(poviSubscription.getDescription());
                 priceButton.setText("$" + mSubscriptionList.get(tabs.getSelectedTabPosition()).get(getAdapterPosition()).getPrice());
+                subscriptionImage.setImageResource(poviSubscription.getImageId());
             }
 
             @Override
@@ -283,8 +284,9 @@ public class SubscriptionFragment2 extends Fragment {
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             if (poviSubscriptions != null && poviSubscriptions.size() > position) {
-                holder.category.setText(poviSubscriptions.get(position).getTitle());
-                holder.numberOfStories.setText("Number Of Stories: " + poviSubscriptions.get(position).getNumberOfStories());
+                PoviSubscription poviSubscription = poviSubscriptions.get(position);
+                holder.category.setText(poviSubscription.getTitle());
+                holder.preview.setImageResource(poviSubscription.getImageId());
             }
         }
 

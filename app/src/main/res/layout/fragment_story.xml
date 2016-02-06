@@ -38,47 +38,47 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:id="@+id/authorimage"
-                android:src="@drawable/experts_avatar"
+                android:src="@drawable/daphna_headshot_circle_2"
                 android:scaleType="fitXY"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="8dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/category_title"
                 android:text="Development Category"
                 android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:gravity="center_vertical"
                 android:layout_weight="1"
+                android:textStyle="bold"
                 android:inputType="textCapWords"
                 android:layout_toRightOf="@+id/authorimage"
                 android:layout_marginLeft="2dp"
                 android:layout_alignTop="@+id/authorimage"
-                android:textStyle="italic"
-                android:layout_marginTop="8dp"
+                android:textSize="32dp"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/byauthor"
                 android:inputType="textShortMessage"
                 android:textColor="@color/white"
                 android:text="By Author"
                 android:layout_below="@+id/category_title"
                 android:layout_toRightOf="@+id/authorimage"
-                android:layout_marginLeft="2dp"
                 android:layout_alignBottom="@+id/authorimage"
                 android:ellipsize="end"
                 android:maxLines="2" />
@@ -86,14 +86,34 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/storytitle"
                 android:textColor="@color/white"
                 android:inputType="textMultiLine|textUri"
                 android:text="Title of the story here"
-                android:layout_below="@+id/authorimage"
                 android:ellipsize="end"
-                android:maxLines="2" />
+                android:maxLines="2"
+                android:layout_below="@+id/category_title"
+                android:layout_toRightOf="@+id/authorimage"
+                android:layout_toEndOf="@+id/authorimage"
+                android:textSize="28dp"
+                android:layout_marginTop="32dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/storyexcerpt"
+                android:textColor="@color/white"
+                android:inputType="textMultiLine|textUri"
+                android:text="Title of the story here"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:layout_below="@+id/storytitle"
+                android:layout_toRightOf="@+id/authorimage"
+                android:layout_toEndOf="@+id/authorimage"
+                android:textSize="28dp"
+                android:layout_marginTop="32dp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -102,8 +122,12 @@
                 android:text="Read More"
                 android:id="@+id/readmore"
                 style="@style/Base.Widget.AppCompat.Button.Borderless"
-                android:layout_below="@+id/storytitle"
-                android:gravity="right" />
+                android:gravity="right"
+                android:layout_below="@+id/storyexcerpt"
+                android:layout_toRightOf="@+id/authorimage"
+                android:layout_toEndOf="@+id/authorimage"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
 
         </RelativeLayout>
 
@@ -126,6 +150,8 @@
             android:orientation="vertical">
 
             <TextView
+                android:layout_marginLeft="20dp"
+                android:textSize="28dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -139,19 +165,20 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:textStyle="italic"
+                android:textStyle="bold"
                 android:layout_marginTop="8dp"
                 />
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:id="@+id/followup1"
-                android:src="@drawable/experts_avatar"
+                android:src="@drawable/storytelling_icon1"
                 android:layout_below="@+id/followup"
                 android:scaleType="fitXY"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -163,24 +190,24 @@
                 android:layout_gravity="center"
                 android:gravity="center_vertical"
                 android:layout_weight="1"
-                android:inputType="textCapWords"
-                android:layout_toRightOf="@+id/followup1"
-                android:layout_marginLeft="2dp"
-                android:layout_alignTop="@+id/followup1"
+                android:inputType="textMultiLine"
                 android:textStyle="italic"
-                android:layout_marginTop="8dp"
-                />
+                android:layout_alignTop="@+id/followup1"
+                android:layout_toRightOf="@+id/followup1"
+                android:layout_marginRight="16dp"
+                android:layout_toEndOf="@+id/followup1" />
 
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:id="@+id/followup2"
-                android:src="@drawable/experts_avatar"
+                android:src="@drawable/storytelling_icon2"
                 android:layout_below="@+id/followup1"
                 android:scaleType="fitXY"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="30dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -192,24 +219,24 @@
                 android:layout_gravity="center"
                 android:gravity="center_vertical"
                 android:layout_weight="1"
-                android:inputType="textCapWords"
-                android:layout_toRightOf="@+id/followup2"
-                android:layout_marginLeft="2dp"
-                android:layout_alignTop="@+id/followup2"
+                android:inputType="textMultiLine"
                 android:textStyle="italic"
-                android:layout_marginTop="8dp"
-                />
+                android:layout_marginRight="16dp"
+                android:layout_alignTop="@+id/followup2"
+                android:layout_toRightOf="@+id/followup2"
+                android:layout_toEndOf="@+id/followup2" />
 
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:id="@+id/followup3"
-                android:src="@drawable/experts_avatar"
+                android:src="@drawable/storytelling_icon3"
                 android:layout_below="@+id/followup2"
                 android:scaleType="fitXY"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginBottom="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -221,13 +248,13 @@
                 android:layout_gravity="center"
                 android:gravity="center_vertical"
                 android:layout_weight="1"
-                android:inputType="textCapWords"
-                android:layout_toRightOf="@+id/followup3"
-                android:layout_marginLeft="2dp"
-                android:layout_alignTop="@+id/followup3"
+                android:inputType="textMultiLine"
+                android:layout_marginRight="16dp"
                 android:textStyle="italic"
-                android:layout_marginTop="8dp"
-                />
+                android:layout_alignTop="@+id/followup3"
+                android:layout_toRightOf="@+id/followup3"
+                android:layout_toEndOf="@+id/followup3"
+                android:layout_marginBottom="30dp" />
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>

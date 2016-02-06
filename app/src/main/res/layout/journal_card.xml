@@ -20,7 +20,7 @@
             android:layout_height="100dp"
             android:id="@+id/playContent"
             android:layout_weight="1"
-            android:src="@drawable/audio_header"
+            android:src="@drawable/player"
             android:scaleType="fitXY"
             android:adjustViewBounds="true"
             android:layout_below="@+id/journal_date" />
