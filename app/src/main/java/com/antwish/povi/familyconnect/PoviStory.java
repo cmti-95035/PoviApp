@@ -8,6 +8,9 @@ public class PoviStory {
     private String poviResponse;
     private String[] followupQuestions;
 
+    public PoviStory() {
+    }
+
     public PoviStory(String author, String category, String[] followupQuestions, String fullStory, String poviResponse, String title) {
         this.author = author;
         this.category = category;

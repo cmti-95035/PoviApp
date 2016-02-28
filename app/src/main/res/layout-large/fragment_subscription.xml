@@ -38,12 +38,12 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:id="@+id/subscriptionImage"
                 android:src="@drawable/experts_avatar"
                 android:scaleType="fitXY"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="40dp"
                 android:layout_alignTop="@+id/subscriptionTitle"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true" />
@@ -54,13 +54,13 @@
                 android:background="@color/red_accent"
                 android:textColor="@color/white"
                 android:text="$1.99"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/price"
                 android:shadowDx="1"
                 android:shadowDy="1"
                 android:shadowRadius="0.6"
                 android:gravity="center"
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="80dp"
                 android:layout_marginTop="10dp"
                 android:layout_below="@+id/storytitle"
                 android:layout_alignParentLeft="true"
@@ -78,13 +78,12 @@
                 android:gravity="center_vertical"
                 android:layout_weight="1"
                 android:inputType="textCapWords"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:textStyle="bold"
-                android:textSize="20sp"
                 />
 
             <TextView
@@ -94,13 +93,12 @@
                 android:id="@+id/storytitle"
                 android:inputType="textMultiLine"
                 android:text="Description of the subscription"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
                 android:textColor="@color/white"
                 android:layout_below="@+id/subscriptionTitle"
                 android:ellipsize="end"
-                android:maxLines="20"
-                android:textSize="14sp"
+                android:maxLines="10"
                 android:layout_toLeftOf="@+id/subscriptionImage"
                 android:layout_toStartOf="@+id/subscriptionImage" />
 
