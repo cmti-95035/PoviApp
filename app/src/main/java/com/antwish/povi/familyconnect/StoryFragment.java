@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.analytics.HitBuilders;
@@ -46,8 +47,7 @@ public class StoryFragment extends Fragment {
         tracker.setScreenName("Conversation Starter screen");
         tracker.send(new HitBuilders.ScreenViewBuilder().build());
 
-
-        setHasOptionsMenu(false);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -55,15 +55,17 @@ public class StoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_story, container, false);
 
-        populateStory();
+        populateStory(RestServer.getStory());
         return view;
     }
 
-    private void populateStory()
+    private void populateStory(PoviStory poviStory)
     {
-        story = RestServer.getStory();
+        story = poviStory;
 
         populateTitleCard();
+
+        populateImage();
 
         String[] questions = story.getFollowupQuestions();
 
@@ -85,6 +87,29 @@ public class StoryFragment extends Fragment {
         });
     }
 
+    private void populateImage(){
+        ImageView imageView = (ImageView) view.findViewById(R.id.authorimage);
+        switch (story.getAuthor()){
+            case "Daphna Ram":
+                imageView.setImageResource(R.drawable.daphna_headshot_circle_2);
+                break;
+            case "Mallika Sankaran":
+                imageView.setImageResource(R.drawable.mallika_headshot);
+                break;
+            case "Anna Muggiati":
+                imageView.setImageResource(R.drawable.anna_headshot);
+                break;
+            case "Olya Glantsman":
+                imageView.setImageResource(R.drawable.olya_headshot);
+                break;
+            case "Yonit Parenti":
+                imageView.setImageResource(R.drawable.yonit_headshot);
+                break;
+            default:
+                imageView.setImageResource(R.drawable.daphna_headshot_circle_2);
+                break;
+        }
+    }
     private void populateTitleCard()
     {
         TextView category = (TextView)view.findViewById(R.id.category_title);
@@ -97,7 +122,7 @@ public class StoryFragment extends Fragment {
         title.setText(story.getTitle());
 
         TextView excerpt = (TextView)view.findViewById(R.id.storyexcerpt);
-        excerpt.setText(story.getFullStory().substring(0, 70) + "...");
+        excerpt.setText(story.getFullStory().substring(0, 40) + "...");
     }
 
     private void expand(PoviStory currentStory){
@@ -134,14 +159,19 @@ public class StoryFragment extends Fragment {
 
 
     @Override
-    public void onCreateOptionsMenu(
-            Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.clear();
-        inflater.inflate(R.menu.menu_settings, menu);
+        inflater.inflate(R.menu.menu_story, menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
+        switch(item.getItemId()){
+            case R.id.refresh_story:
+                populateStory(RestServer.getNextStory());
+                return true;
+        }
+        return false;
     }
 }

@@ -883,112 +883,15 @@ public class RestServer {
             String title = "Left Out Of A Game";
             POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
 
-            category = "Perception of others, Critical thinking";
-            questions = new String[3];
-            questions[0] = "What’s fun about going out and doing things with people you like?";
-            questions[1] = "What is hard about losing something?";
-            questions[2] = "When was the last time you lost something you really liked?";
-            fullStory = "I went out for ice cream today with my parents and best friend. I got 3 whole scoops of chocolate ice cream AND had fudge! We were walking and I was almost through my first scoop when I tripped. I was okay, but my ice cream fell!!\n" +
-                    "Could you help me figure out how I feel?";
-            response = "I was really sad. I even cried. Ice cream is my absolute favorite and I was so upset that I lost it! My mom also told me I had to be more careful and didn’t buy me any more ice cream, but it wasn’t my fault!!! I got really mad at my mom.";
-            title = "My ice cream fell";
-            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
-
-            category = "Empathy, Relationship";
-            questions = new String[3];
-            questions[0] = "How can you tell when someone is sad?";
-            questions[1] = "Is it important to help people? Why?";
-            questions[2] = "Is it sometimes hard to help people? Easy to help people? Why?";
-            fullStory = "I was at the library today and I saw this little girl who was crying and did not have her parents around. My mom and I went up to her and asked her what was wrong. She said that she came to the library with her mom and dad but couldn't find them.\n" +
-                    "My mom and I took her to talk to the security officer at the library who helped her find her parents.\n";
-            response = "I was so scared for her because I know I get really sad when I can’t find my mom and am really scared. I was happy that my mom went up to her to help because I wanted to help but didn’t know how and my mom showed me what to do. I’m proud of myself that I went with my mom to make her feel better!\n" +
-                    "I’m glad we stayed with her until she found her parents because I didn’t want her to be lonely.\n";
-            title = "A girl was lost in the library";
-            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
-
-            category = "Perspective taking, Perception of others";
-            questions = new String[3];
-            questions[0] = "When is it easy to share? Difficult to share?";
-            questions[1] = "What does it mean to be selfish?";
-            questions[2] = "Is there such a thing as being \"too nice?\"?";
-            fullStory = "My friends and I were talking today at lunch and I saw that one of them got Oreo cookies in his lunch and I didn't. He said he wouldn’t share with me because he likes Oreos too much. But then I looked in my lunch bag and saw that my mom had left me a note that said \"I love you! Hope you're having fun at school!\"\n" +
-                    "Could you help me figure out how I feel?\n";
-            response = "At first I was mad at my friend because I thought it was nice to share and I didn’t think he was being nice. Then I saw the note from my mom and that made me feel very happy and loved, which also made me less mad at my friend. I thought about it and realized that it’s hard to share sometimes, even with your friend—especially when it’s one of your favorite things! I wish that next time he’d let me have some. I’ll probably share something with him just to show him how nice it is to do that!";
-            title = "My friend did not want to share";
-            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
-
-            category = "Resiliency, Critical Thinking";
-            questions = new String[3];
-            questions[0] = "How does it feel to try hard and not succeed?";
-            questions[1] = "When is it important to do things carefully? Why?";
-            questions[2] = "Why do you think you practice things at school?";
-            fullStory = "I worked really hard on our math problems today at school and was the first to finish! But then when the teacher went over our answers, it turns out I got some of the answers wrong.\n" +
-                    "Could you help me figure out how I feel?\n";
-            response = "I’m a little ashamed that I thought I had done so well and then didn’t. I’m also sad too, because I thought I knew more about math. I did make some careless mistakes, so I guess next time I should do the math problems more slowly. There were also some questions I didn’t understand, so I should take more time to study.";
-            title = "Did poorly in a test";
-            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
-
-            category = "Resilience, Emotion Recognition";
-            questions = new String[3];
-            questions[0] = "What do you do when things don't go your way? How do you make yourself feel better when things don't go your way?";
-            questions[1] = "Is it important to feel “special?” Why or why not?";
-            questions[2] = "Why do some people like getting attention?";
-            fullStory = "I was so excited today to wear my regular clothes for the costume parade because I didn't want to wear any costume. But then I saw 4 boys in my school with the same shirt! Could you help me figure out how I feel? ";
-            response = "At first, I was pretty upset because I thought my shirt was so cool and special but it wasn’t. But these other kids came over and asked me if I wanted to join their parade team. I did and we received lots of cheers from our friends.";
-            title = "My costume is not special";
-            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
-
-            category = "Perception of others, Friendship";
-            questions = new String[3];
-            questions[0] = "What does it mean to “miss” someone?";
-            questions[1] = "Is it possible to feel like someone is a close friend even though you don’t see them every day?";
-            questions[2] = "Do you wish you could control what other people do? What would that be like? What would you make them do?";
-            fullStory = "Becky has been my best friend ever since we were really really little! But she had to move away today because her mom and dad wanted to. Who will I be friends with now?? Who will I do things with now?? Could you help me figure out how I feel?";
-            response = "I was really sad and worried. What if she forgets about me? What if she makes new friends and likes them more?";
-            title = "My best friend is moving away";
-            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
-
-            category = "Perspective taking, emotional recognition";
-            questions = new String[3];
-            questions[0] = "Would you rather give someone good news or bad news? Why?";
-            questions[1] = "Is it possible to be happy for someone else but disappointed in yourself?";
-            questions[2] = "What do you do when things don't go your way? How do you make yourself feel better when things don't go your way?";
-            fullStory = "Jessica and I both tried out for the school play. Today they put up a list of who made it and Jessica and I both did! Even better, Jessica got the biggest part! She was home sick today though so I get to call her and tell her the good news!";
-            response = "I was so happy that we both got in the play! We worked super hard and helped each other practice. Now I get to hang out with Jessica even more because we’ll both be doing rehearsal after school. Maybe next time I’ll get the lead in the play?";
-            title = "I love the school play";
-            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
-
-            category = "Emotion Recognition, Perspective taking";
-            questions = new String[3];
-            questions[0] = "How does it feel to be made fun of?";
-            questions[1] = "Why do people compare themselves to others? Are there times when it’s a good idea? Times when it’s a bad idea?";
-            questions[2] = "Are there times when you’re happy when someone else is sad? Or you’re sad when someone else is happy?";
-            fullStory = "Jacob has been super mean to me—telling me I can’t dance, that I’m not good at four-square, that my answers during class are stupid and that I can’t spell. Then today we had track for P.E. and Jacob was last in the sprint in his race.\n" +
-                    "Could you tell me how I feel?\n";
-            response = "I was excited that Jacob didn’t do well! He deserved it after being so mean to me. Now I get to make fun of him for being bad at something! But I also tell myself that I shouldn’t be like Jacob, making fun of people. What should I do?";
-            title = "I have a really mean friend";
-            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
-
-            category = "Friendship, teamwork";
-            questions = new String[3];
-            questions[0] = "What does it mean to be ‘fair’ when doing a project?";
-            questions[1] = "Do we have to like everything about our friends?";
-            questions[2] = "Is there such a thing as being “too helpful” to others?";
-            fullStory = "My friend Sam is super cool. We laugh a lot and have a ton of fun playing pretend. At school Sam and I were paired up to do a book report together.  I was really excited! But then I ended up doing almost everything- I read the book and wrote a summary of the plot AND thought about why the book is important. All Sam did was help me draw the picture for the report.\n" +
-                    "Could you help me figure out how I feel?\n";
-            response = "I was super frustrated and disappointed. I thought Sam was my friend! How come he didn’t help me with our project? I’m never going to work with Sam again. I didn’t tell the teacher because I don’t want Sam to be mad at me though. I did tell Sam I was upset that he didn’t help, but he didn’t think it was a big deal. I am going to find a different partner for my next project.";
-            title = "Book repor with Sam";
-            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
-
             author = "Mallika Sankaran";
-            category = "Friendship, Perception of Others";
+            category = "Friendship, Perception Of Others";
             questions = new String[3];
             questions[0] = "What type of friend is Annie?";
             questions[1] = "What if you played with someone else today?";
             questions[2] = "What does your friend Carla say?";
             fullStory = "Annie is always telling us what to do. And she is taller than us so we feel we should listen to her. Yesterday when i didn’t listen to her, she said people like me are bad. What did she mean? Should I tell my mom? Can you help me with how I feel? I don’t want to lose all my friends who are also scared of Annie.";
             response = "I asked Carla if we could play on the slide today as I did not want to play Annie’s game today. She said ok. I promised her that tomorrow we could still try Annie’s game. I am hoping it will be ok.";
-            title = "Dealing with the Bossy Friends";
+            title = "Dealing With The Bossy Friends";
             POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
 
             author = "Anna Muggiati";
@@ -999,11 +902,11 @@ public class RestServer {
             questions[2] = "Can Povi explain that he doesn’t know that he talks while sleeping?";
             fullStory = "Last night I had to share a hotel bed with my older brother Gubba. He says I talked while I was dreaming. He yelled at me to make me stop. I cried out loud and my parents woke up and said he won’t get to use his camera to take photos in Florence! I am scared of sleeping with him again. How can I make him understand that I don’t know I am talking when asleep?";
             response = "After my parents took his camera, Gubba was really upset. I told him it was not my fault if I sleep-talk, and that he could just ignore this and keep sleeping. My mom told him he could use her earplugs. I am hopeful that he understands it’s not my choice to talk in the middle of the night, and he says he’s going to be better tonight.";
-            title = "First Night in Italy (The Series of Povi World Travels)";
+            title = "First Night In Italy (The Series Of Povi World Travels)";
             POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
 
             author = "Olya Glantsman";
-            category = "Perception of others, Critical thinking";
+            category = "Perception Of Others, Critical thinking";
             questions = new String[3];
             questions[0] = "Do you have a favorite toy?";
             questions[1] = "How do you think you would feel if someone broke it? Would it matter if they apologized?";
@@ -1015,14 +918,112 @@ public class RestServer {
             POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
 
             author = "Yonit Parenti";
-            category = "Friendship, Perception of Others";
+            category = "Friendship, Perception Of Others";
             questions = new String[3];
             questions[0] = "Do you want Cooper to play nicely with everyone?";
             questions[1] = "What should you say to him when he acts this way?";
             questions[2] = "What else do you think Povi can do?";
             fullStory = "When I play with my good friend Cooper he can make bad choices. Today he knocked over other kids Lego towers and roared like a dinosaur at my friend Grayson. He started to cry. He is usually nice to me. The teacher had to give him a time out. How can I help him be a better friend?";
             response = "After his time out, Cooper was really sad and he sat alone and cried. I went to sit beside him and told him that I still want to be his friend but I think that he should go and say sorry to our other friends.";
-            title = "Cooper can make bad choices";
+            title = "Cooper Can Make Bad Choices";
+            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
+
+            author = "Daphna Ram";
+            category = "Perception Of Others, Critical Thinking";
+            questions = new String[3];
+            questions[0] = "What’s fun about going out and doing things with people you like?";
+            questions[1] = "What is hard about losing something?";
+            questions[2] = "When was the last time you lost something you really liked?";
+            fullStory = "I went out for ice cream today with my parents and best friend. I got 3 whole scoops of chocolate ice cream AND had fudge! We were walking and I was almost through my first scoop when I tripped. I was okay, but my ice cream fell!!\n" +
+                    "Could you help me figure out how I feel?";
+            response = "I was really sad. I even cried. Ice cream is my absolute favorite and I was so upset that I lost it! My mom also told me I had to be more careful and didn’t buy me any more ice cream, but it wasn’t my fault!!! I got really mad at my mom.";
+            title = "My Ice Cream Fell";
+            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
+
+            category = "Empathy, Relationship";
+            questions = new String[3];
+            questions[0] = "How can you tell when someone is sad?";
+            questions[1] = "Is it important to help people? Why?";
+            questions[2] = "Is it sometimes hard to help people? Easy to help people? Why?";
+            fullStory = "I was at the library today and I saw this little girl who was crying and did not have her parents around. My mom and I went up to her and asked her what was wrong. She said that she came to the library with her mom and dad but couldn't find them.\n" +
+                    "My mom and I took her to talk to the security officer at the library who helped her find her parents.\n";
+            response = "I was so scared for her because I know I get really sad when I can’t find my mom and am really scared. I was happy that my mom went up to her to help because I wanted to help but didn’t know how and my mom showed me what to do. I’m proud of myself that I went with my mom to make her feel better!\n" +
+                    "I’m glad we stayed with her until she found her parents because I didn’t want her to be lonely.\n";
+            title = "A Girl Was Lost In The Library";
+            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
+
+            category = "Perspective taking, Perception Of Others";
+            questions = new String[3];
+            questions[0] = "When is it easy to share? Difficult to share?";
+            questions[1] = "What does it mean to be selfish?";
+            questions[2] = "Is there such a thing as being \"too nice?\"?";
+            fullStory = "My friends and I were talking today at lunch and I saw that one of them got Oreo cookies in his lunch and I didn't. He said he wouldn’t share with me because he likes Oreos too much. But then I looked in my lunch bag and saw that my mom had left me a note that said \"I love you! Hope you're having fun at school!\"\n" +
+                    "Could you help me figure out how I feel?\n";
+            response = "At first I was mad at my friend because I thought it was nice to share and I didn’t think he was being nice. Then I saw the note from my mom and that made me feel very happy and loved, which also made me less mad at my friend. I thought about it and realized that it’s hard to share sometimes, even with your friend—especially when it’s one of your favorite things! I wish that next time he’d let me have some. I’ll probably share something with him just to show him how nice it is to do that!";
+            title = "My Friend Did Not Want To Share";
+            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
+
+            category = "Resiliency, Critical Thinking";
+            questions = new String[3];
+            questions[0] = "How does it feel to try hard and not succeed?";
+            questions[1] = "When is it important to do things carefully? Why?";
+            questions[2] = "Why do you think you practice things at school?";
+            fullStory = "I worked really hard on our math problems today at school and was the first to finish! But then when the teacher went over our answers, it turns out I got some of the answers wrong.\n" +
+                    "Could you help me figure out how I feel?\n";
+            response = "I’m a little ashamed that I thought I had done so well and then didn’t. I’m also sad too, because I thought I knew more about math. I did make some careless mistakes, so I guess next time I should do the math problems more slowly. There were also some questions I didn’t understand, so I should take more time to study.";
+            title = "Did Poorly In A Test";
+            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
+
+            category = "Resilience, Emotion Recognition";
+            questions = new String[3];
+            questions[0] = "What do you do when things don't go your way? How do you make yourself feel better when things don't go your way?";
+            questions[1] = "Is it important to feel “special?” Why or why not?";
+            questions[2] = "Why do some people like getting attention?";
+            fullStory = "I was so excited today to wear my regular clothes for the costume parade because I didn't want to wear any costume. But then I saw 4 boys in my school with the same shirt! Could you help me figure out how I feel? ";
+            response = "At first, I was pretty upset because I thought my shirt was so cool and special but it wasn’t. But these other kids came over and asked me if I wanted to join their parade team. I did and we received lots of cheers from our friends.";
+            title = "My Costume Is Not Special";
+            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
+
+            category = "Perception Of Others, Friendship";
+            questions = new String[3];
+            questions[0] = "What does it mean to “miss” someone?";
+            questions[1] = "Is it possible to feel like someone is a close friend even though you don’t see them every day?";
+            questions[2] = "Do you wish you could control what other people do? What would that be like? What would you make them do?";
+            fullStory = "Becky has been my best friend ever since we were really really little! But she had to move away today because her mom and dad wanted to. Who will I be friends with now?? Who will I do things with now?? Could you help me figure out how I feel?";
+            response = "I was really sad and worried. What if she forgets about me? What if she makes new friends and likes them more?";
+            title = "My Best Friend Is Moving Away";
+            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
+
+            category = "Perspective Taking, Emotional Recognition";
+            questions = new String[3];
+            questions[0] = "Would you rather give someone good news or bad news? Why?";
+            questions[1] = "Is it possible to be happy for someone else but disappointed in yourself?";
+            questions[2] = "What do you do when things don't go your way? How do you make yourself feel better when things don't go your way?";
+            fullStory = "Jessica and I both tried out for the school play. Today they put up a list of who made it and Jessica and I both did! Even better, Jessica got the biggest part! She was home sick today though so I get to call her and tell her the good news!";
+            response = "I was so happy that we both got in the play! We worked super hard and helped each other practice. Now I get to hang out with Jessica even more because we’ll both be doing rehearsal after school. Maybe next time I’ll get the lead in the play?";
+            title = "I Love The School Play";
+            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
+
+            category = "Emotion Recognition, Perspective Taking";
+            questions = new String[3];
+            questions[0] = "How does it feel to be made fun of?";
+            questions[1] = "Why do people compare themselves to others? Are there times when it’s a good idea? Times when it’s a bad idea?";
+            questions[2] = "Are there times when you’re happy when someone else is sad? Or you’re sad when someone else is happy?";
+            fullStory = "Jacob has been super mean to me—telling me I can’t dance, that I’m not good at four-square, that my answers during class are stupid and that I can’t spell. Then today we had track for P.E. and Jacob was last in the sprint in his race.\n" +
+                    "Could you tell me how I feel?\n";
+            response = "I was excited that Jacob didn’t do well! He deserved it after being so mean to me. Now I get to make fun of him for being bad at something! But I also tell myself that I shouldn’t be like Jacob, making fun of people. What should I do?";
+            title = "I Have A Really Mean Friend";
+            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
+
+            category = "Friendship, Teamwork";
+            questions = new String[3];
+            questions[0] = "What does it mean to be ‘fair’ when doing a project?";
+            questions[1] = "Do we have to like everything about our friends?";
+            questions[2] = "Is there such a thing as being “too helpful” to others?";
+            fullStory = "My friend Sam is super cool. We laugh a lot and have a ton of fun playing pretend. At school Sam and I were paired up to do a book report together.  I was really excited! But then I ended up doing almost everything- I read the book and wrote a summary of the plot AND thought about why the book is important. All Sam did was help me draw the picture for the report.\n" +
+                    "Could you help me figure out how I feel?\n";
+            response = "I was super frustrated and disappointed. I thought Sam was my friend! How come he didn’t help me with our project? I’m never going to work with Sam again. I didn’t tell the teacher because I don’t want Sam to be mad at me though. I did tell Sam I was upset that he didn’t help, but he didn’t think it was a big deal. I am going to find a different partner for my next project.";
+            title = "Book Report With Sam";
             POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
 
             category = "";
