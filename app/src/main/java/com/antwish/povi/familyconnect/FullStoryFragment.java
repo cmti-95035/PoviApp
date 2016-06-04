@@ -5,14 +5,12 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -69,14 +67,15 @@ public class FullStoryFragment extends Fragment {
         TextView fullbody = (TextView) view.findViewById(R.id.storybody);
         fullbody.setText(story.getFullStory());
 
-        ImageView poviImage = (ImageView) view.findViewById(R.id.poviicon);
-
         TextView poviResponse = (TextView)view.findViewById(R.id.poviresponse);
         poviResponse.setText(story.getPoviResponse());
     }
 
     private void populateTitleCard()
     {
+        ImageView poviImage = (ImageView) view.findViewById(R.id.authorimage);
+        poviImage.setImageResource(StoryFragment.populateImageResource(story));
+
         TextView category = (TextView)view.findViewById(R.id.category_title);
         category.setText(story.getCategory());
 
@@ -91,6 +90,7 @@ public class FullStoryFragment extends Fragment {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction trans = fragmentManager.beginTransaction();
     }
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -112,7 +112,8 @@ public class FullStoryFragment extends Fragment {
     public void onResume(){
         super.onResume();
         if (titleChangeListener != null)
-            titleChangeListener.onTitleChangeListener("Conversation Starter");
+            titleChangeListener.onTitleChangeListener("引发对话的场景故事");
+//            titleChangeListener.onTitleChangeListener("Conversation Starter");
     }
 
 

@@ -128,7 +128,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/storybody"
                 android:text="Full Story Body Here"
                 android:textColor="@color/black"
@@ -142,8 +141,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:textSize="20sp"
-                android:layout_marginBottom="20dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="10dp"
                 />
             <ImageView
                 android:layout_marginLeft="20dp"
@@ -161,9 +160,8 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/poviresponse"
-                android:text="This is where the povi's response will be"
+                android:text="This is where the povi's response is"
                 android:textColor="@color/black"
                 android:layout_gravity="center"
                 android:gravity="center_vertical"
@@ -173,8 +171,8 @@
                 android:layout_marginLeft="4dp"
                 android:layout_alignTop="@+id/poviicon"
                 android:textStyle="italic"
-                android:layout_marginTop="8dp"
-                android:textSize="18sp"
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"
                 android:layout_marginRight="20dp"
                 />
 

@@ -103,7 +103,7 @@
                 android:layout_toRightOf="@+id/authorimage"
                 android:layout_toEndOf="@+id/authorimage"
                 android:textSize="22sp"
-                android:layout_marginTop="32dp" />
+                android:layout_marginTop="24dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -112,20 +112,20 @@
                 android:id="@+id/storyexcerpt"
                 android:textColor="@color/white"
                 android:inputType="textMultiLine|textUri"
-                android:text="Title of the story here"
+                android:text="Excerpt of the story here ..."
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:layout_below="@+id/storytitle"
                 android:layout_toRightOf="@+id/authorimage"
                 android:layout_toEndOf="@+id/authorimage"
                 android:textSize="22sp"
-                android:layout_marginTop="32dp" />
+                android:layout_marginTop="10dp" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:textColor="@color/white"
-                android:text="Read More"
+                android:text="阅读完整的故事"
                 android:id="@+id/readmore"
                 style="@style/Base.Widget.AppCompat.Button.Borderless"
                 android:gravity="right"
@@ -162,7 +162,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:id="@+id/followup"
-                android:text="Follow Up"
+                android:text="跟进问题"
                 android:textColor="@color/grey_dark"
                 android:layout_gravity="center"
                 android:gravity="center_vertical"
@@ -295,7 +295,8 @@
                 android:id="@+id/recordResponse"
                 android:layout_marginTop="2dp"
                 android:textColor="@color/grey_dark"
-                android:text="Record A Response" />
+                android:text="给孩子的答复录音" />
+                <!--android:text="Record A Response" />-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

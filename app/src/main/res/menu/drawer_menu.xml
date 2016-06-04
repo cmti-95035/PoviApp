@@ -47,7 +47,8 @@
             android:id="@+id/conversationStarter"
             android:icon="@drawable/ic_today_grey_24dp"
             android:checked="true"
-            android:title="Conversation Starter" />
+            android:title="引发对话的场景故事" />
+            <!--android:title="Conversation Starter" />-->
 
         <item
             android:id="@+id/journal"

@@ -873,14 +873,25 @@ public class RestServer {
             String[] questions = new String[3];
 
             String author = "Daphna Ram";
-            String category = "Relationship, Emotion Recognition";
+            String category = "如何看待他人，批判性思考";
+            questions[0] = "你觉得和自己喜欢的人一起出去做事情有什么乐趣？";
+            questions[1] = "丢东西为什么会让人难过？";
+            questions[2] = "你还记得上一次你丢了你所喜欢的东西时的感受吗？";
+            String fullStory = "今天我和爸爸妈妈还有我最好的朋友一起出去吃冰激凌，我要了3满勺我最喜欢的巧克力冰淇淋！我们边走边吃。当我几乎吃完第一勺冰激凌时我绊倒了。虽然我没事，但是我的冰淇淋全掉在地上了！你能体会我当时的感受吗？";
+            String response = "当时我真的很伤心，甚至哭了。冰淇淋是我最喜欢的零食，可因为我绊倒把冰激凌掉地上让我很不高兴！这虽然不是我的错，我妈妈却告诉我以后要更加小心，而且她没有重新给我买冰淇淋作为补偿！我对妈妈非常生气。";
+            String title = "我的冰淇淋掉地上了！";
+            POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
+
+            questions = new String[3];
+            author = "Daphna Ram";
+            category = "Relationship, Emotion Recognition";
             questions[0] = "How does it feel to be left out of a game?";
             questions[1] = "Is it hard to ask to be included? Why? What should someone do if they can’t be included?";
             questions[2] = "What do you do when things don't go your way? How do you make yourself feel better when things don't go your way?";
-            String fullStory = "Today, I was left out of a game of four square on the playground. Even though I tried to be included, the kids said there was no room for me in the game.\n" +
+            fullStory = "Today, I was left out of a game of four square on the playground. Even though I tried to be included, the kids said there was no room for me in the game.\n" +
                     "Could you help me figure out how I feel?";
-            String response = "I feel sad that I wasn’t included in the game, and maybe a little mad too. I ended up going up to other kids on the playground who were playing tag and asked them if I could play with them, and they let me. I think I’ll try and ask if I can be in the four-square game again tomorrow.";
-            String title = "Left Out Of A Game";
+            response = "I feel sad that I wasn’t included in the game, and maybe a little mad too. I ended up going up to other kids on the playground who were playing tag and asked them if I could play with them, and they let me. I think I’ll try and ask if I can be in the four-square game again tomorrow.";
+            title = "Left Out Of A Game";
             POVI_STORIES.add(new PoviStory(author, category, questions, fullStory, response, title));
 
             author = "Mallika Sankaran";

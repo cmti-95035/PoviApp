@@ -5,7 +5,6 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -65,7 +64,8 @@ public class StoryFragment extends Fragment {
 
         populateTitleCard();
 
-        populateImage();
+        ImageView imageView = (ImageView) view.findViewById(R.id.authorimage);
+        imageView.setImageResource(populateImageResource(story));
 
         String[] questions = story.getFollowupQuestions();
 
@@ -87,27 +87,25 @@ public class StoryFragment extends Fragment {
         });
     }
 
-    private void populateImage(){
-        ImageView imageView = (ImageView) view.findViewById(R.id.authorimage);
-        switch (story.getAuthor()){
+    public static int populateImageResource(PoviStory poviStory){
+        switch (poviStory.getAuthor()){
             case "Daphna Ram":
-                imageView.setImageResource(R.drawable.daphna_headshot_circle_2);
-                break;
+                return R.drawable.daphna_headshot;
+                
             case "Mallika Sankaran":
-                imageView.setImageResource(R.drawable.mallika_headshot);
-                break;
+                return R.drawable.mallika_headshot;
+                
             case "Anna Muggiati":
-                imageView.setImageResource(R.drawable.anna_headshot);
-                break;
+                return R.drawable.anna_headshot;
+                
             case "Olya Glantsman":
-                imageView.setImageResource(R.drawable.olya_headshot);
-                break;
+                return R.drawable.olya_headshot;
+                
             case "Yonit Parenti":
-                imageView.setImageResource(R.drawable.yonit_headshot);
-                break;
+                return R.drawable.yonit_headshot;
+                
             default:
-                imageView.setImageResource(R.drawable.daphna_headshot_circle_2);
-                break;
+                return R.drawable.daphna_headshot;
         }
     }
     private void populateTitleCard()
@@ -154,7 +152,8 @@ public class StoryFragment extends Fragment {
     public void onResume(){
         super.onResume();
         if (titleChangeListener != null)
-            titleChangeListener.onTitleChangeListener("Conversation Starter");
+            titleChangeListener.onTitleChangeListener("引发对话的场景故事");
+//            titleChangeListener.onTitleChangeListener("Conversation Starter");
     }
 
 
